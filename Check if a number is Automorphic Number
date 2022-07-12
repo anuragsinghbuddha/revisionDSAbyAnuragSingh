@@ -1,0 +1,37 @@
+Example 1:
+Input Format: N = 76
+Result: Automorphic Number
+Explanation: Calculating 76 * 76 gives 5776, it ends with the given number.
+
+Input Format: 25
+Result: Automorphic Number
+Explanation: Calculating 25 * 25 gives 625, it ends with the given number.
+
+.......................................................................................................................... 
+def automorph(n):
+    z=n
+    p=n 
+    count=0 
+    while(p):
+        count+=1 
+        p=p//10 
+    temp=n*n 
+    res=0
+    while(count!=0):
+         q=temp%10
+         res=res*10+q 
+         temp=temp//10
+         count-=1
+    mes=0
+    while(res):
+        r=res%10 
+        mes=mes*10+r 
+        res=res//10 
+    if(mes==z):
+        return("automorph Number")
+    return("Not a automorph Number")
+    
+    
+if __name__ == '__main__':
+    s=761
+    print(automorph(s))
