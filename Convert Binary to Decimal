@@ -1,0 +1,29 @@
+Example 1:
+Input: N = 1011
+Output: 11
+Explanation: 1011 when converted to decimal number is “11”.
+
+Example 2:
+Input: 100
+Output: 4
+Explanation: 100 when converted to decimal number is “4”.
+
+...................................................................................................................
+def bintodec(n):
+    res=[]
+    while(n):
+        p=n%10 
+        res.append(p)
+        n=n//10 
+    temp=0
+    for i in range(len(res)):
+        temp+=res[i]*(2**i)
+    return(temp)
+        
+    
+    
+    
+    
+if __name__ == '__main__':
+    n=100 
+    print(bintodec(n))
