@@ -1,0 +1,24 @@
+Example 1:
+Input: N = 6, array[] = {13,46,24,52,20,9}
+Output: 9,13,20,24,46,52
+Explanation: After sorting we get 9,13,20,24,46,52
+
+
+Input: N = 5, array[] = {5,4,3,2,1}
+Output: 1,2,3,4,5
+Explanation: After sorting we get 1,2,3,4,5
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+def bubble(nums):
+    for i in range(len(nums)):
+        for j in range(i,len(nums)-1):
+            if(nums[j]>nums[j+1]):
+                temp=nums[j]
+                nums[j]=nums[j+1]
+                nums[j+1]=temp 
+    return(nums)
+        
+ if __name__ == '__main__':
+    nums=[5,1,9,2,3,7,6]
+    print(bubble(nums))
+    
