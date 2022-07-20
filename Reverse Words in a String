@@ -1,0 +1,26 @@
+Example 1:
+Input: s=”this is an amazing program”
+Output: “program amazing an is this”
+
+Example 2:
+Input: s=”This is decent”
+Output: “decent is This” 
+
+
+def test(n):
+    n=" "+n
+    res=[]
+    mes=""
+    for i in range(len(n)-1,-1,-1):
+        if(n[i]==" "):
+            while(res):
+                p=res.pop()
+                mes+=p 
+            mes+=" "
+        res.append(n[i])
+    return(mes)
+        
+    
+if __name__ == '__main__':
+    n="this is an amazing program"
+    print(test(n))
