@@ -1,0 +1,31 @@
+Example 1:
+Input: string = “123xyz”
+Output: 123
+
+Example 2:
+Input: string = “1xyz23”
+Output: 24
+..............................................
+
+def test(n):
+    n=n+"a"
+    temp=[]
+    res=""
+    for i in range(len(n)-1):
+        if(int(ord(n[i]))>=65 and int(ord(n[i]))<=165):
+            pass 
+        else:
+            res+=n[i]
+            if(int(ord(n[i+1]))>=65 and int(ord(n[i+1]))<=165):
+                temp.append(res)
+                res=""
+    sum1=0 
+    for i in temp:
+        sum1+=int(i) 
+    return(sum1)
+    
+    
+    
+if __name__ == '__main__':
+    n="a1bc232"
+    print(test(n))
