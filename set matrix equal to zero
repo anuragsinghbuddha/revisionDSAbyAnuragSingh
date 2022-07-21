@@ -1,0 +1,23 @@
+def test(n):
+    row=set()
+    col=set()
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if(matrix[i][j]==0):
+                row.add(i)
+                col.add(j)
+    #print(res)
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])): 
+            if(i in row or j in col):
+                matrix[i][j]=0 
+    return(matrix)
+    
+    
+    
+    
+    
+if __name__ == '__main__':
+    matrix=[[7, 19, 3],
+            [4, 21, 0]]
+    print(test(matrix))
