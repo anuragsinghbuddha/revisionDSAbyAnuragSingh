@@ -1,0 +1,35 @@
+Input1=10 
+Input2=3 
+output=[5,2,3]
+
+Input1=7
+input2=4 
+output=[1,2,3,1] 
+
+Problem= Here input1 is number of chocolate and input2 is number of children first children will get 1 chco and second will get 2 and 3 will get three choco and so on 
+if choco left then first will get input2+1 choco and second will get input2+2 choco and so on till choco remain ..
+
+def chocodistr(input1,input2):
+    res=[0]*input2 
+    for i in range(len(res)):
+        if(input1>i+1):
+            res[i]=i+1 
+            input1-=i+1
+        else:
+            res[i]=input1 
+            return(res)
+    #print(res)
+    while(input1):
+        for i in range(len(res)):
+            if(input1>(input2+(i+1))):
+                res[i]+=input2+(i+1)
+                input1-=(input2+(i+1))
+            else:
+                res[i]+=input1
+                return(res)
+                
+    
+if __name__ == '__main__':
+    input1=7
+    input2=4
+    print(chocodistr(input1,input2))
