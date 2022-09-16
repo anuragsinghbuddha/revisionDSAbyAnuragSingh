@@ -1,0 +1,57 @@
+Insertion at start , between,end in linkedlist and display.................................
+
+
+
+class Node:
+ 
+    def __init__(self, new_data):
+ 
+        self.new_data = new_data 
+        self.next = None 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def push_start(self, new_data):
+        temp = Node(new_data)
+        temp.next = self.head
+        self.head = temp
+    def push_between(self,pos,data):
+        np=Node(data)
+        temp=self.head
+        for i in range(pos-1):
+            temp=temp.next 
+        np.data=data 
+        np.next=temp.next 
+        temp.next=np
+    def push_end(self,data):
+        ne=Node(data)
+        temp=self.head
+        while(temp.next!=None):
+            temp=temp.next
+        temp.next=ne
+        
+    def display(self):
+        temp=self.head 
+        if(self.head==None):
+            print("LinkedList is Empty")
+        else:
+            while(temp!=None):
+                print(temp.new_data,end="-->")
+                temp=temp.next
+    
+    
+    
+    
+    
+l=LinkedList()
+l.push_start(20)
+l.push_start(30)
+l.push_start(40)
+l.push_start(56)
+l.push_start(60)
+l.push_between(2,2)
+l.push_end(100)
+l.display()
+
+
