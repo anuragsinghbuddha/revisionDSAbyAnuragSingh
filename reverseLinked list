@@ -1,0 +1,40 @@
+class Node:
+    def __init__(self,data):
+        self.data=data 
+        self.next=None 
+class Linkedlist:
+    def __init__(self):
+        self.head=None 
+    def display(self):
+        if(self.head==None):
+            return("Linkedlist is emplty")
+        else:
+            temp=self.head 
+            while(temp):
+                print(temp.data,end="-->")
+                temp=temp.next 
+        print()
+    def insert(self,data):
+        p=Node(data)
+        temp=self.head 
+        self.head=p 
+        p.next=temp 
+    def reverseLinkedList(self):
+        prev=None 
+        curr=self.head 
+        temp=curr.next
+        while(curr):
+            temp=curr.next 
+            curr.next=prev 
+            prev=curr
+            curr=temp
+        self.head=prev
+if __name__ == '__main__':
+    l=Linkedlist()
+    l.insert(10)
+    l.insert(20)
+    l.insert(30)
+    l.insert(40)
+    l.display()
+    l.reverseLinkedList()
+    l.display()
